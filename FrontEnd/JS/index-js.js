@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", enableAudio);
 });
 
+const joinBTN = document.getElementById("joinBTN");
+
+joinBTN.addEventListener('click', (req, res) => {
+  window.location.href = "/api/register";
+})
+
 // Mobile menu toggle
 document
   .getElementById("mobile-menu-button")
