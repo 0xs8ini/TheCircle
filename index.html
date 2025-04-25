@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE CIRCLE | [REDACTED]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/index-css.css" />
+  </head>
+  <body class="min-h-screen">
+    <!-- CRT Scanlines Effect -->
+    <div class="scanlines"></div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full bg-black bg-opacity-90 border-b border-gray-800 z-50"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <span class="text-xl font-bold text-gray-300 flicker"
+                >[THE_CIRCLE]</span
+              >
+            </div>
+            <div class="hidden md:block ml-10">
+              <div class="flex items-baseline space-x-6">
+                <a
+                  href="/future"
+                  class="text-gray-400 hover:text-white px-3 py-2 text-sm font-mono"
+                  >/home</a
+                >
+                <a
+                  href="/future"
+                  class="text-gray-400 hover:text-white px-3 py-2 text-sm font-mono"
+                  >/about</a
+                >
+                <a
+                  href="/future"
+                  class="text-gray-400 hover:text-white px-3 py-2 text-sm font-mono"
+                  >/contact</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <button
+              class="px-4 py-2 rounded-sm text-sm font-mono bg-transparent border border-gray-600 hover:border-gray-300 hover:text-white text-gray-300 transition duration-300 flicker"
+              id="joinBTN"
+            >
+              > join_circle
+            </button>
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none"
+            >
+              <svg
+                class="block h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu md:hidden bg-black bg-opacity-95"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="/future"
+            class="block px-3 py-2 text-base font-mono text-gray-400 hover:text-white"
+            >/home</a
+          >
+          <a
+            href="/future"
+            class="block px-3 py-2 text-base font-mono text-gray-400 hover:text-white"
+            >/about</a
+          >
+          <a
+            href="/future"
+            class="block px-3 py-2 text-base font-mono text-gray-400 hover:text-white"
+            >/contact</a
+          >
+          <button
+            class="block w-full text-left px-3 py-2 text-base font-mono text-gray-300 border border-gray-600 hover:border-gray-300"
+          >
+            > Join_Us
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12 px-4 sm:px-6 lg:px-8 container mx-auto">
+      <!-- Hero Section -->
+      <section
+        class="mb-10 md:mb-20 terminal-border p-4 md:p-6 bg-black bg-opacity-70"
+      >
+        <div class="text-center">
+          <h1
+            class="text-3xl md:text-5xl font-bold mb-4 responsive-heading glitch-effect"
+            data-text="THE_CIRCLE"
+          >
+            THE_CIRCLE
+          </h1>
+          <div class="slogan-container max-w-3xl mx-auto mb-6 md:mb-8">
+            <p
+              class="text-sm md:text-lg text-gray-400 font-mono relative group text-left md:text-center"
+            >
+              <span class="terminal-cursor">></span>
+              <span class="glowing-slogan">
+                <span class="text-cyan-400">echo</span>
+                "<span class="text-white italic flicker"
+                  >It Starts With You & Ends With You</span
+                >"
+              </span>
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
+            <button
+              class="px-4 py-2 md:px-6 md:py-3 rounded-sm text-sm font-mono bg-transparent border border-gray-600 hover:border-gray-300 hover:text-white text-gray-300 transition duration-300 flicker"
+            >
+              > begin_initiation
+            </button>
+            <button
+              class="px-4 py-2 md:px-6 md:py-3 rounded-sm text-sm font-mono bg-transparent border border-gray-600 hover:border-gray-300 hover:text-white text-gray-300 transition duration-300"
+            >
+              > learn_more
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section
+        class="mb-10 md:mb-20 terminal-border p-4 md:p-6 bg-black bg-opacity-70"
+      >
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 glitch-effect"
+          data-text=">_HOW_IT_WORKS"
+        >
+          > HOW_IT_WORKS
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 font-mono">
+          <div
+            class="border border-gray-800 p-3 md:p-4 hover:border-gray-600 transition duration-300"
+          >
+            <div class="text-gray-400 mb-2">$> step_1</div>
+            <h3 class="text-lg md:text-xl text-white mb-2 md:mb-3">
+              Learn Beyond Boundaries
+            </h3>
+            <p class="text-gray-400 text-xs md:text-sm">
+              Join the Circle to explore topics outside your academic stream.
+              Whether teaching or learning, the Circle fosters a collaborative
+              space where knowledge isn’t confined by traditional fields. This
+              allows you to broaden your understanding by connecting with peers
+              and gaining insights from diverse subject
+            </p>
+          </div>
+
+          <div
+            class="border border-gray-800 p-3 md:p-4 hover:border-gray-600 transition duration-300"
+          >
+            <div class="text-gray-400 mb-2">$> step_2</div>
+            <h3 class="text-lg md:text-xl text-white mb-2 md:mb-3">
+              Teach and Share Knowledge
+            </h3>
+            <p class="text-gray-400 text-xs md:text-sm">
+              Raise classes on topics you're passionate about, or participate in
+              classes created by others. The Circle encourages an open exchange
+              of ideas, empowering students to share knowledge across
+              disciplines. It’s a platform for learning through collaboration,
+              where anyone can both teach and learn freely, enriching their
+              skills.
+            </p>
+          </div>
+
+          <div
+            class="border border-gray-800 p-3 md:p-4 hover:border-gray-600 transition duration-300"
+          >
+            <div class="text-gray-400 mb-2">$> step_3</div>
+            <h3 class="text-lg md:text-xl text-white mb-2 md:mb-3">
+              Apply Learning Through Projects
+            </h3>
+            <p class="text-gray-400 text-xs md:text-sm">
+              After a week of learning, you’ll work on projects that combine
+              knowledge from different fields. These interdisciplinary projects
+              showcase your ability to innovate and apply concepts practically.
+              The aim is to build a diverse portfolio that demonstrates your
+              skills, enhancing your resume for real-world opportunities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Manifesto Section -->
+      <section
+        class="mb-10 md:mb-20 terminal-border p-4 md:p-6 bg-black bg-opacity-70"
+      >
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 glitch-effect"
+          data-text=">_OUR_TRUTHS"
+        >
+          > OUR_TRUTHS
+        </h2>
+
+        <div class="space-y-4 md:space-y-6 font-mono">
+          <div class="flex items-start">
+            <span class="text-gray-500 mr-2">$></span>
+            <p class="text-gray-300 text-sm md:text-base">
+              <b>Anonymity First</b> You can teach and learn without using your
+              real name. Your privacy is respected, and your identity stays
+              anonymous. (Till the time you dont want)
+            </p>
+          </div>
+          <div class="flex items-start">
+            <span class="text-gray-500 mr-2">$></span>
+            <p class="text-gray-300 text-sm md:text-base">
+              <b>No Judgement</b> There are no questions asked. Focus on your
+              work and projects without worrying about others judging you.
+            </p>
+          </div>
+          <div class="flex items-start">
+            <span class="text-gray-500 mr-2">$></span>
+            <p class="text-gray-300 text-sm md:text-base">
+              The Circle is designed for <b>introverts</b> and
+              <b> individuals</b>. You control how you interact and participate
+            </p>
+          </div>
+          <div class="flex items-start">
+            <span class="text-gray-500 mr-2">$></span>
+            <p class="text-gray-300 text-sm md:text-base">
+              <b>Your Journey, Your Rules</b> The Circle starts and ends with
+              you. You define your learning path and projects without external
+              pressure.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Membership Section -->
+      <section
+        class="terminal-border p-4 md:p-8 bg-black bg-opacity-70 text-center"
+      >
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-3 md:mb-4 glitch-effect"
+          data-text=">_INTERESTED?"
+        >
+          > INTERESTED?
+        </h2>
+        <p
+          class="text-gray-400 mb-4 md:mb-8 font-mono max-w-4xl mx-auto text-sm md:text-base"
+        >
+          > echo "Got a question? Whisper it through the wire [EMAIL :>]:
+          <a
+            href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=0x45.The_Circle@proton.me"
+            class="email-link"
+            >0x45.The_Circle@proton.me</a
+          >"
+        </p>
+        <button
+          class="px-6 py-2 md:px-8 md:py-3 rounded-sm text-sm font-mono bg-transparent border border-gray-600 hover:border-gray-300 hover:text-white text-gray-300 transition duration-300 flicker"
+        >
+          > begin_initiation_sequence
+        </button>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="border-t border-gray-800 py-6 md:py-8 px-4 sm:px-6 lg:px-8 bg-black"
+    >
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <span class="text-base md:text-lg font-mono text-gray-400"
+              >[THE_CIRCLE]</span
+            >
+          </div>
+          <div class="flex space-x-4 md:space-x-6">
+            <a
+              href="/future"
+              class="text-gray-500 hover:text-gray-300 font-mono text-xs md:text-sm"
+              >/terms</a
+            >
+            <a
+              href="/future"
+              class="text-gray-500 hover:text-gray-300 font-mono text-xs md:text-sm"
+              >/privacy</a
+            >
+            <a
+              href="/future"
+              class="text-gray-500 hover:text-gray-300 font-mono text-xs md:text-sm"
+              >/contact</a
+            >
+          </div>
+        </div>
+        <div class="mt-6 md:mt-8 text-center">
+          <p class="text-xs text-gray-600 font-mono">
+            > WARNING: Unauthorized access prohibited. All activity monitored.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="./JS/index-js.js"></script>
+  </body>
+</html>

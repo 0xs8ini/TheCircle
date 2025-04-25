@@ -1,0 +1,260 @@
+:root {
+  --primary: #0ff;
+  --secondary: #f0f;
+  --bg: #0a0a0a;
+  --text: #e0e0e0;
+  --border: #333;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Space Mono", monospace;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Terminal Elements */
+.terminal-border {
+  border: 1px solid var(--border);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  margin: 1rem 0;
+}
+
+/* Glitch Effects */
+.glitch-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  text-shadow: -2px 0 var(--secondary);
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(30px, 9999px, 50px, 0);
+  }
+  20% {
+    clip: rect(10px, 9999px, 30px, 0);
+  }
+  40% {
+    clip: rect(40px, 9999px, 60px, 0);
+  }
+  60% {
+    clip: rect(5px, 9999px, 25px, 0);
+  }
+  80% {
+    clip: rect(50px, 9999px, 70px, 0);
+  }
+  100% {
+    clip: rect(15px, 9999px, 35px, 0);
+  }
+}
+
+/* Typing Effects */
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid var(--primary);
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--primary);
+  }
+}
+
+/* Flicker Effects */
+.flicker {
+  animation: flicker 3s linear infinite;
+}
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.4;
+  }
+}
+
+/* CRT Effects */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: overlay;
+}
+
+/* Mobile Navigation */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu.active {
+  max-height: 500px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Typography */
+  h1 {
+    font-size: 1.8rem !important;
+    line-height: 2.2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Layout */
+  .terminal-border {
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  /* Navigation */
+  nav {
+    padding: 0 1rem;
+  }
+
+  /* Glitch effect - reduce intensity */
+  .glitch-effect::after {
+    animation: glitch-anim-mobile 2s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch-anim-mobile {
+    0% {
+      clip: rect(15px, 9999px, 25px, 0);
+    }
+    20% {
+      clip: rect(5px, 9999px, 15px, 0);
+    }
+    40% {
+      clip: rect(20px, 9999px, 40px, 0);
+    }
+    60% {
+      clip: rect(2px, 9999px, 12px, 0);
+    }
+    80% {
+      clip: rect(25px, 9999px, 45px, 0);
+    }
+    100% {
+      clip: rect(7px, 9999px, 17px, 0);
+    }
+  }
+
+  /* Button sizing */
+  button,
+  .btn {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Grid adjustments */
+  .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Spacing */
+  .mb-20 {
+    margin-bottom: 3rem !important;
+  }
+
+  .pt-24 {
+    padding-top: 6rem !important;
+  }
+
+  /* Slogan container */
+  .slogan-container {
+    text-align: left !important;
+    padding: 0 0.5rem !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-heading {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
+
+.email-link {
+  color: #60a5fa; /* Tailwind's blue-400 */
+  text-decoration: underline;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.email-link:hover {
+  color: #3b82f6; /* Tailwind's blue-500 */
+  text-shadow: 0 0 4px rgba(91, 157, 255, 0.6);
+}

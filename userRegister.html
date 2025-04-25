@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE CIRCLE | INITIATION</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #e0e0e0;
+        font-family: "Space Mono", monospace;
+        overflow-x: hidden;
+      }
+      .terminal-border {
+        border: 1px solid #333;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+      }
+      .heading-effect {
+        position: relative;
+        display: inline-block;
+        max-width: 100%;
+        word-wrap: break-word;
+      }
+      .flicker {
+        animation: flicker 3s linear infinite;
+      }
+      @keyframes flicker {
+        0%,
+        19.999%,
+        22%,
+        62.999%,
+        64%,
+        64.999%,
+        70%,
+        100% {
+          opacity: 1;
+        }
+        20%,
+        21.999%,
+        63%,
+        63.999%,
+        65%,
+        69.999% {
+          opacity: 0.4;
+        }
+      }
+      .scanlines {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.03) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        background-size: 100% 4px;
+        pointer-events: none;
+        z-index: 9999;
+        mix-blend-mode: overlay;
+      }
+      .terminal-cursor::after {
+        content: "|";
+        animation: blink 1s step-end infinite;
+        color: #0ff;
+      }
+      @keyframes blink {
+        from,
+        to {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #333;
+        color: #e0e0e0;
+        font-family: "Space Mono", monospace;
+        width: 100%;
+        padding: 8px 0;
+        outline: none;
+      }
+      input:focus {
+        border-bottom-color: #0ff;
+      }
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+      }
+      .checkbox-container input {
+        width: auto;
+        margin-right: 10px;
+      }
+      .privacy-text {
+        font-size: 0.8rem;
+        color: #666;
+        margin-top: 30px;
+      }
+
+      /* Mobile adjustments */
+      @media (max-width: 768px) {
+        .responsive-heading {
+          font-size: 1.5rem;
+          line-height: 1.3;
+          word-break: break-word;
+          white-space: normal;
+          text-align: center;
+          padding: 0 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- CRT Scanlines Effect -->
+    <div class="scanlines"></div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full bg-black bg-opacity-90 border-b border-gray-800 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <span class="text-xl font-bold text-gray-300 flicker"
+                >[THE_CIRCLE]</span
+              >
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <a
+              href="/"
+              class="px-4 py-2 rounded-sm text-sm font-mono bg-transparent border border-gray-600 hover:border-gray-300 hover:text-white text-gray-300 transition duration-300"
+            >
+              > return_to_surface
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main
+      class="flex items-center justify-center min-h-screen pt-16 pb-12 px-4 sm:px-6 lg:px-8"
+    >
+      <div class="terminal-border p-8 bg-black bg-opacity-70 max-w-lg w-full">
+        <div class="text-center mb-8">
+          <h1
+            class="responsive-heading text-3xl md:text-4xl font-bold mb-4 heading-effect"
+          >
+            > INITIATION_SEQUENCE
+          </h1>
+          <p class="text-md text-gray-400 font-mono">
+            > echo "All fields encrypted end-to-end"
+          </p>
+        </div>
+
+        <form id="initiationForm" class="font-mono">
+          <div class="mb-6">
+            <label class="block text-gray-400 mb-2"
+              >$> enter_your_true_name</label
+            >
+            <input
+              type="text"
+              name="name"
+              required
+              class="bg-transparent border-b border-gray-600 focus:border-cyan-400 w-full py-2 px-1 text-white"
+            />
+            <p class="text-xs text-gray-600 mt-1">
+              (This name will never be exposed)
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-gray-400 mb-2">$> choose_sudo_name</label>
+            <input
+              type="text"
+              name="username"
+              required
+              class="bg-transparent border-b border-gray-600 focus:border-cyan-400 w-full py-2 px-1 text-white"
+            />
+            <p class="text-xs text-gray-600 mt-1">
+              (Your public identity in The Circle)
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-gray-400 mb-2">$> Email</label>
+            <input
+              type="email"
+              name="email"
+              required
+              class="bg-transparent border-b border-gray-600 focus:border-cyan-400 w-full py-2 px-1 text-white"
+            />
+            <p class="text-xs text-gray-600 mt-1">(To Contact You)</p>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-gray-400 mb-2">$> Password</label>
+            <input
+              type="text"
+              name="password"
+              required
+              class="bg-transparent border-b border-gray-600 focus:border-cyan-400 w-full py-2 px-1 text-white"
+            />
+            <span
+              class="absolute right-2 top-[42px] text-gray-400 cursor-pointer"
+              onclick="togglePassword()"
+            >
+              👁️
+            </span>
+
+            <p class="text-xs text-gray-600 mt-1">(Remember It)</p>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-gray-400 mb-2">$> confirm_Password</label>
+            <input
+              type="text"
+              name="confirm_password"
+              required
+              class="bg-transparent border-b border-gray-600 focus:border-cyan-400 w-full py-2 px-1 text-white"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full mt-8 px-6 py-3 rounded-sm text-sm font-mono bg-transparent border border-gray-600 hover:border-gray-300 hover:text-white text-gray-300 transition duration-300 flicker"
+          >
+            > complete_initiation
+          </button>
+
+          <p class="privacy-text">
+            > By proceeding, you agree to our zero-knowledge protocol. No
+            personal data is stored in readable form. All communications are
+            encrypted with military-grade algorithms. Your trust is sacred.
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-8 px-4 sm:px-6 lg:px-8 bg-black">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <span class="text-lg font-mono text-gray-400">[THE_CIRCLE]</span>
+          </div>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-300 font-mono text-sm"
+              >/privacy</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-300 font-mono text-sm"
+              >/security</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-300 font-mono text-sm"
+              >/manifesto</a
+            >
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <p class="text-xs text-gray-600 font-mono">
+            > WARNING: All initiation activity monitored for security. No logs
+            retained.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="./JS/userRegister.js"></script>
+  </body>
+</html>
