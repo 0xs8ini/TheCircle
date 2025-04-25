@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     try {
-      const response = await fetch("https://thecircle-backend.onrender.com/api/login", {
+      const response = await fetch("https://thecircle-backend.onrender.com:8888/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (response.ok) {
         // ✅ Update this with your actual GitHub Pages dashboard page path
-        window.location.href = "/thecircle-frontend/dashboard.html";
+        window.location.href = "https://0xs8ini.github.io/TheCircle/FuturePage.html";
       } else {
         const errorData = await response.json();
         const message = errorData.message || "Authentication failed";

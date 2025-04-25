@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const joinBTN = document.getElementById("joinBTN");
   if (joinBTN) {
     joinBTN.addEventListener("click", () => {
-      window.location.href = "./userLogin.html";
+      window.location.href = " https://0xs8ini.github.io/TheCircle/userLogin.html";
     });
   }
 
